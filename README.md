@@ -132,4 +132,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-> **Tip:** Replace `screenshots/animated-demo.gif` with your own animated demo for maximum effect! 
+> **Tip:** Replace with your own animated demo for maximum effect! 
