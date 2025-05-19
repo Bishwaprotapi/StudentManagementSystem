@@ -1,0 +1,80 @@
+﻿@model StudentManagementSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container-fluid px-4">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Student Details</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            @if (!string.IsNullOrEmpty(Model.PhotoPath))
+                            {
+                                <img src="@Model.PhotoPath" alt="Student Photo" class="img-fluid rounded" style="max-width: 100%; height: auto;" />
+                            }
+                            else
+                            {
+                                <div class="bg-light rounded p-4 text-center">
+                                    <i class="fas fa-user fa-5x text-muted"></i>
+                                    <p class="mt-2 text-muted">No photo available</p>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-md-8">
+                            <dl class="row">
+                                <dt class="col-sm-4">Student ID</dt>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.StudentId)</dd>
+
+                                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Name)</dt>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+
+                                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+                                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Department)</dt>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.Department)</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group" role="group">
+                        <a asp-action="Edit" asp-route-id="@Model.StudentId" class="btn btn-warning">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Adjust card height based on window size
+        function adjustCardHeight() {
+            const windowHeight = window.innerHeight;
+            const card = document.querySelector('.card');
+            const minHeight = 400; // Minimum height in pixels
+            const maxHeight = windowHeight - 100; // Maximum height (window height minus margins)
+            
+            card.style.minHeight = Math.max(minHeight, maxHeight) + 'px';
+        }
+
+        // Call on load and resize
+        window.addEventListener('load', adjustCardHeight);
+        window.addEventListener('resize', adjustCardHeight);
+    </script>
+}
