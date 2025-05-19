@@ -1,4 +1,4 @@
-# Student Management System 🚀
+# Student Management System Using MVC 🚀
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/Bishwaprotapi/StudentManagementSystem/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
