@@ -5,7 +5,7 @@ A modern web application for managing student information, built with ASP.NET Co
 ## Screenshots
 
 ### Student List View
-![Student List](screenshots/Student List.png)
+![Student List](screenshots/student-list.png)
 *Main dashboard showing the list of all students with search, photo, and action buttons.*
 
 ### Student Details View
